@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  height: 100vh;
+  background-color: rgb(0, 255, 145);
+}
+.overlayCards {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 2em;
+}
+.card {
+  width: 200px;
+  height: 250px;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 5px 5px 10px rgb(101, 101, 101), -5px -5px 10px white;
+}
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.overlay {
+  position: absolute;
+  inset: 0;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.814);
+  transform: translateX(-80%);
+  transition: all 0.5s ease-out;
+  opacity: 0;
+}
+.card:hover .overlay {
+  transform: translateX(0);
+  opacity: 1;
+  box-shadow: inset 5px 5px 10px rgb(128, 128, 128),
+    inset -5px -5px 10px rgb(128, 128, 128);
+}
